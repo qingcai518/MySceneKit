@@ -10,9 +10,9 @@ class MainViewModel {
     var chapters = [ChapterInfo]()
     
     func getChapters() {
-        chapters.append(ChapterInfo(id: "Chapter1", name: "Chapter1.  Create a simple project"))
-        chapters.append(ChapterInfo(id: "Chapter2", name: "Chapter2."))
-        chapters.append(ChapterInfo(id: "Chapter3", name: "Chapter3."))
+        chapters.append(ChapterInfo(id: "Chapter1", name: "Chapter1.  text"))
+        chapters.append(ChapterInfo(id: "Chapter2", name: "Chapter2.  cube"))
+        chapters.append(ChapterInfo(id: "Chapter3", name: "Chapter3.  3d model"))
         chapters.append(ChapterInfo(id: "Chapter4", name: "Chapter4."))
         chapters.append(ChapterInfo(id: "Chapter5", name: "Chapter5."))
         chapters.append(ChapterInfo(id: "Chapter6", name: "Chapter6."))

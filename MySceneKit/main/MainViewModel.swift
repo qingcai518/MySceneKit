@@ -18,9 +18,9 @@ class MainViewModel {
         chapters.append(ChapterInfo(id: "Chapter6", name: "Chapter6.  omni light"))
         chapters.append(ChapterInfo(id: "Chapter7", name: "Chapter7.  directional light"))
         chapters.append(ChapterInfo(id: "Chapter8", name: "Chapter8.  sopt light"))
-        chapters.append(ChapterInfo(id: "Chapter9", name: "Chapter9."))
-        chapters.append(ChapterInfo(id: "Chapter10", name: "Chapter10."))
-        chapters.append(ChapterInfo(id: "Chapter11", name: "Chapter11."))
+        chapters.append(ChapterInfo(id: "Chapter9", name: "Chapter9.  camera"))
+        chapters.append(ChapterInfo(id: "Chapter10", name: "Chapter10.  action"))
+        chapters.append(ChapterInfo(id: "Chapter11", name: "Chapter11.  geometry"))
         chapters.append(ChapterInfo(id: "Chapter12", name: "Chapter12."))
     }
 }

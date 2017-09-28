@@ -40,8 +40,8 @@ extension Chapter9Controller {
         
         let box1 = SCNBox(width: 10, height: 10, length: 10, chamferRadius: 0)
         let box2 = SCNBox(width: 10, height: 10, length: 10, chamferRadius: 0)
-        box1.firstMaterial?.diffuse.contents = UIImage(named: "test1")
-        box2.firstMaterial?.diffuse.contents = UIImage(named: "test2")
+        box1.firstMaterial?.diffuse.contents = UIImage(named: "test1.jpg")
+        box2.firstMaterial?.diffuse.contents = UIImage(named: "test2.jpg")
         
         let boxNode1 = SCNNode(geometry: box1)
         let boxNode2 = SCNNode(geometry: box2)

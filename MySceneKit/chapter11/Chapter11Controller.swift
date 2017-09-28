@@ -25,11 +25,22 @@ class Chapter11Controller: UIViewController {
 extension Chapter11Controller {
     fileprivate func setupSCNView() {
         let scnView = SCNView(frame: view.frame)
+        scnView.backgroundColor = UIColor.black
+        scnView.allowsCameraControl = true
         view.addSubview(scnView)
         
-        let scnScene = SCNScene(named: "test1.dae")
+        let scnScene = SCNScene()
         scnView.scene = scnScene
         
-        scnView.allowsCameraControl = true
+        // plane
+        let plane = SCNPlane(width: 1, height: 1)
+        plane.firstMaterial?.diffuse.contents = UIImage(named: "test3.jpg")
+        let planeNode = SCNNode(geometry: plane)
+        planeNode.position = SCNVector3Make(0, 0, 0)
+        scnScene.rootNode.addChildNode(planeNode)
+        
+//        // custom.
+//        let path = UIBezierPath(arcCenter: <#T##CGPoint#>, radius: <#T##CGFloat#>, startAngle: <#T##CGFloat#>, endAngle: <#T##CGFloat#>, clockwise: <#T##Bool#>)
+//        let shape = SCNShape(path: <#T##UIBezierPath?#>, extrusionDepth: 3)
     }
 }

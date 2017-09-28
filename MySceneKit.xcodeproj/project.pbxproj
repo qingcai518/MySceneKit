@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B0D4F161F7CCCB000DA40BD /* test2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B0D4F151F7CCCB000DA40BD /* test2.jpg */; };
+		4B0D4F181F7CE44400DA40BD /* test3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B0D4F171F7CE44300DA40BD /* test3.jpg */; };
 		4B311A6E1F7B676800E472A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B311A6D1F7B676800E472A4 /* AppDelegate.swift */; };
 		4B311A781F7B676800E472A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B311A761F7B676800E472A4 /* LaunchScreen.storyboard */; };
 		4B311A841F7B68B400E472A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B311A811F7B68B400E472A4 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		4B0D4F151F7CCCB000DA40BD /* test2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test2.jpg; sourceTree = "<group>"; };
+		4B0D4F171F7CE44300DA40BD /* test3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test3.jpg; sourceTree = "<group>"; };
 		4B311A6A1F7B676800E472A4 /* MySceneKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySceneKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B311A6D1F7B676800E472A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B311A771F7B676800E472A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		4BA7CD611F7B93C0002DFB8A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4B0D4F171F7CE44300DA40BD /* test3.jpg */,
 				4B0D4F151F7CCCB000DA40BD /* test2.jpg */,
 				4BA7CD621F7B9CAF002DFB8A /* test1.jpg */,
 			);
@@ -364,6 +367,7 @@
 				4B311A961F7B6EB900E472A4 /* Chapter1.storyboard in Resources */,
 				4BA7CD631F7B9CAF002DFB8A /* test1.jpg in Resources */,
 				4B311A9B1F7B747200E472A4 /* Chapter2.storyboard in Resources */,
+				4B0D4F181F7CE44400DA40BD /* test3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

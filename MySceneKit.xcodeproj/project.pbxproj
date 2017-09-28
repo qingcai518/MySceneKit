@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0D4F161F7CCCB000DA40BD /* test2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B0D4F151F7CCCB000DA40BD /* test2.jpg */; };
 		4B311A6E1F7B676800E472A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B311A6D1F7B676800E472A4 /* AppDelegate.swift */; };
 		4B311A781F7B676800E472A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B311A761F7B676800E472A4 /* LaunchScreen.storyboard */; };
 		4B311A841F7B68B400E472A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B311A811F7B68B400E472A4 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B0D4F151F7CCCB000DA40BD /* test2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test2.jpg; sourceTree = "<group>"; };
 		4B311A6A1F7B676800E472A4 /* MySceneKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySceneKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B311A6D1F7B676800E472A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B311A771F7B676800E472A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		4BA7CD611F7B93C0002DFB8A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4B0D4F151F7CCCB000DA40BD /* test2.jpg */,
 				4BA7CD621F7B9CAF002DFB8A /* test1.jpg */,
 			);
 			path = images;
@@ -345,6 +348,7 @@
 				4B311A851F7B68B400E472A4 /* Info.plist in Resources */,
 				4B311A781F7B676800E472A4 /* LaunchScreen.storyboard in Resources */,
 				4BA7CD861F7BE8BE002DFB8A /* Chapter7.storyboard in Resources */,
+				4B0D4F161F7CCCB000DA40BD /* test2.jpg in Resources */,
 				4BA7CD951F7BE8D5002DFB8A /* Chapter10.storyboard in Resources */,
 				4BA7CD8B1F7BE8C5002DFB8A /* Chapter8.storyboard in Resources */,
 				4B311A841F7B68B400E472A4 /* Assets.xcassets in Resources */,

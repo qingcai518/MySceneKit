@@ -25,11 +25,34 @@ class Chapter8Controller: UIViewController {
 extension Chapter8Controller {
     fileprivate func setupSCNView() {
         let scnView = SCNView(frame: view.frame)
+        scnView.backgroundColor = UIColor.black
+        scnView.allowsCameraControl = true
         view.addSubview(scnView)
         
-        let scnScene = SCNScene(named: "test1.dae")
+        let scnScene = SCNScene()
         scnView.scene = scnScene
         
-        scnView.allowsCameraControl = true
+        let scnBox = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0)
+        let scnSphere = SCNSphere(radius: 0.1)
+        
+        let boxNode = SCNNode(geometry: scnBox)
+        boxNode.position = SCNVector3Make(0, 0, -11)
+        
+        let sphereNode = SCNNode(geometry: scnSphere)
+        sphereNode.position = SCNVector3Make(0, 0, -10)
+        
+        scnScene.rootNode.addChildNode(boxNode)
+        scnScene.rootNode.addChildNode(sphereNode)
+        
+        // spot light.
+        let light = SCNLight()
+        light.type = .spot
+        light.color = UIColor.yellow
+        light.castsShadow = true
+        
+        let lightNode = SCNNode()
+        lightNode.light = light
+        lightNode.position = SCNVector3Make(0, 0, -1)
+        scnScene.rootNode.addChildNode(lightNode)
     }
 }

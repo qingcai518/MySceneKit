@@ -29,23 +29,11 @@ class Chapter11Controller: UIViewController {
     var stickerOriginalSize: CGSize?
     var frames = [UIImage]()
     var animationTime : Float = 0
-//    var frames = [
-//        UIImage(named: "bear.jpg"),
-//        UIImage(named: "dahuxu.png"),
-//        UIImage(named: "dog.jpg"),
-//        UIImage(named: "huxu.png"),
-//        UIImage(named: "maohuzi.png"),
-//        UIImage(named: "mini.png"),
-//        UIImage(named: "panda.jpg"),
-//        UIImage(named: "test.png")
-//    ]
-//    var animationTime : Float = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupCamera()
-        setupStickerSize()
         loadGif()
         setupSCNView()
     }
@@ -95,8 +83,9 @@ extension Chapter11Controller {
         scnNode.position = SCNVector3Make(0, 0, 0)
         scnView.scene?.rootNode.addChildNode(scnNode)
         
+        let time = TimeInterval(animationTime / Float(frames.count))
         var count = 0
-        let animationAction = SCNAction.customAction(duration: TimeInterval(animationTime)) { [weak self] (node, elapsedTime) in
+        let action = SCNAction.run { [weak self] node in
             guard let `self` = self else {return}
             self.scnNode.geometry?.firstMaterial?.diffuse.contents = self.frames[count]
             if count < self.frames.count - 1 {
@@ -105,15 +94,12 @@ extension Chapter11Controller {
                 count = 0
             }
         }
-        let repeateGif = SCNAction.repeatForever(animationAction)
-        scnNode.runAction(repeateGif)
+        let waitAction = SCNAction.wait(duration: time)
+        let actions = SCNAction.sequence([action, waitAction])
+        let repeatActions = SCNAction.repeatForever(actions)
+        scnNode.runAction(repeatActions)
         
         scnView.allowsCameraControl = true
-    }
-    
-    fileprivate func setupStickerSize() {
-        let image = UIImage(named: "panda.jpg")
-        stickerOriginalSize = image?.size
     }
     
     fileprivate func toScreenX(_ detectX: Float) -> CGFloat {
@@ -141,6 +127,9 @@ extension Chapter11Controller {
                 animationTime += delayTime
                 
                 let image = UIImage(cgImage: cgImage)
+                if i == 0 {
+                    stickerOriginalSize = image.size
+                }
                 frames.append(image)
             }
         } catch let error {

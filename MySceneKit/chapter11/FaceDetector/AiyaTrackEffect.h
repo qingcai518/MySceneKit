@@ -33,4 +33,5 @@
 - (void)drawTrackPointWithTexture:(GLuint)texture width:(GLuint)width height:(GLuint)height;
 
 -(FaceData) getFaceData;
+-(Boolean) trackSuccess;
 @end

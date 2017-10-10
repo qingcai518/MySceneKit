@@ -58,4 +58,8 @@
     return faceData;
 }
 
+- (Boolean) trackSuccess {
+    return trackResult;
+}
+
 @end

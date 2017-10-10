@@ -9,8 +9,9 @@
 import UIKit
 import SceneKit
 import GPUImage
-import UIKit
-import SceneKit
+
+let screenWidth = UIScreen.main.bounds.width
+let screenHeight = UIScreen.main.bounds.height
 
 class Chapter11Controller: UIViewController {
     var camera: GPUImageVideoCamera!
@@ -21,13 +22,17 @@ class Chapter11Controller: UIViewController {
     lazy var trackEffect = AiyaTrackEffect()
     var trackInput: AiyaTrackInput!
     
-    let scnNode = SCNNode()
+    lazy var scnView = SCNView()
+    lazy var scnNode = SCNNode()
+    
+    var stickerOriginalSize: CGSize?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupCamera()
         setupSCNView()
+        setupStickerSize()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,34 +68,65 @@ extension Chapter11Controller {
     }
     
     fileprivate func setupSCNView() {
-        let scnView = SCNView()
-        scnView.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        scnView.isHidden = true
+        scnView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         scnView.scene = SCNScene()
         scnView.backgroundColor = UIColor.clear
         view.addSubview(scnView)
         
-        let scnPlane = SCNPlane(width: 20, height: 20)
+        let scnPlane = SCNPlane(width: scnView.frame.width, height: scnView.frame.height)
         scnPlane.firstMaterial?.diffuse.contents = "panda.jpg"
         scnNode.geometry = scnPlane
-        
+        scnNode.position = SCNVector3Make(0, 0, 0)
         scnView.scene?.rootNode.addChildNode(scnNode)
+        
         scnView.allowsCameraControl = true
+    }
+    
+    fileprivate func setupStickerSize() {
+        let image = UIImage(named: "panda.jpg")
+        stickerOriginalSize = image?.size
+    }
+    
+    fileprivate func toScreenX(_ detectX: Float) -> CGFloat {
+        return screenWidth * CGFloat(detectX)
+    }
+    
+    fileprivate func toScreenY(_ detectY: Float) -> CGFloat {
+        return screenHeight * CGFloat(1 - detectY)
     }
 }
 
 extension Chapter11Controller: GPUImageVideoCameraDelegate {
     func willOutputSampleBuffer(_ sampleBuffer: CMSampleBuffer!) {
+        if !trackEffect.trackSuccess() {
+            DispatchQueue.main.async {
+                self.scnView.isHidden = true
+            }
+            return
+        }
+        
         let faceData = trackEffect.getFaceData()
         
         let rotateX = CGFloat(faceData.faceRotation.0)
         let rotateY = CGFloat(faceData.faceRotation.1)
         let rotateZ = CGFloat(faceData.faceRotation.2)
-        
-        let translateX = CGFloat(faceData.faceTranslation.0)
-        let translateY = CGFloat(faceData.faceTranslation.1)
-        let translateZ = CGFloat(faceData.faceTranslation.2)
-        
+
+        let centerX = toScreenX(faceData.featurePoints2D.68.0)
+        let centerY = toScreenY(faceData.featurePoints2D.68.1)
+        let width = toScreenX(faceData.featurePoints2D.24.0 - faceData.featurePoints2D.19.0)
+        var height = width
+        if let stickerOriginalSize = stickerOriginalSize {
+            height = width * stickerOriginalSize.height / stickerOriginalSize.width
+        }
+
+        DispatchQueue.main.async {
+            self.scnView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+            self.scnView.center = CGPoint(x: centerX, y: centerY)
+            self.scnView.isHidden = false
+        }
+
         let rotation = SCNAction.rotateTo(x: rotateX, y: -rotateY, z: rotateZ, duration: 0)
-        scnNode.runAction(rotation, forKey: "rot")
+        scnNode.runAction(rotation)
     }
 }

@@ -23,6 +23,16 @@
 		4B311A981F7B6ECC00E472A4 /* Chapter1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B311A971F7B6ECC00E472A4 /* Chapter1Controller.swift */; };
 		4B311A9B1F7B747200E472A4 /* Chapter2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B311A9A1F7B747200E472A4 /* Chapter2.storyboard */; };
 		4B311A9D1F7B748100E472A4 /* Chapter2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B311A9C1F7B748100E472A4 /* Chapter2Controller.swift */; };
+		4BA484411F8A5C0400E3600B /* AiyaCameraSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4BA4843F1F8A5C0400E3600B /* AiyaCameraSDK.bundle */; };
+		4BA484421F8A5C0400E3600B /* AiyaCameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA484401F8A5C0400E3600B /* AiyaCameraSDK.framework */; };
+		4BA484491F8A5EEB00E3600B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA484481F8A5EEB00E3600B /* libz.tbd */; };
+		4BA4844B1F8A5EF100E3600B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA4844A1F8A5EF100E3600B /* libc++.tbd */; };
+		4BA4844D1F8A5EF700E3600B /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA4844C1F8A5EF600E3600B /* libiconv.tbd */; };
+		4BA4844F1F8A604A00E3600B /* panda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BA4844E1F8A604A00E3600B /* panda.jpg */; };
+		4BA4845C1F8C5FB600E3600B /* AiyaDrawTrackPointFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA484541F8C5FB500E3600B /* AiyaDrawTrackPointFilter.m */; };
+		4BA4845D1F8C5FB600E3600B /* AiyaGLDrawPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA484561F8C5FB500E3600B /* AiyaGLDrawPoint.m */; };
+		4BA4845E1F8C5FB600E3600B /* AiyaTrackInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA484591F8C5FB600E3600B /* AiyaTrackInput.m */; };
+		4BA4845F1F8C5FB600E3600B /* AiyaTrackEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA4845B1F8C5FB600E3600B /* AiyaTrackEffect.m */; };
 		4BA7CD631F7B9CAF002DFB8A /* test1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7CD621F7B9CAF002DFB8A /* test1.jpg */; };
 		4BA7CD661F7B9FE2002DFB8A /* Chapter3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7CD651F7B9FE2002DFB8A /* Chapter3.storyboard */; };
 		4BA7CD681F7B9FF9002DFB8A /* Chapter3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7CD671F7B9FF9002DFB8A /* Chapter3Controller.swift */; };
@@ -45,9 +55,11 @@
 		4BA7CD9B1F7BE8DC002DFB8A /* Chapter11Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7CD991F7BE8DC002DFB8A /* Chapter11Controller.swift */; };
 		4BA7CD9F1F7BE8E2002DFB8A /* Chapter12.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7CD9D1F7BE8E2002DFB8A /* Chapter12.storyboard */; };
 		4BA7CDA01F7BE8E2002DFB8A /* Chapter12Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7CD9E1F7BE8E2002DFB8A /* Chapter12Controller.swift */; };
+		62F7B37883E7D9C40E93881F /* Pods_MySceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012F4F2CC0F11C10B24A119F /* Pods_MySceneKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		012F4F2CC0F11C10B24A119F /* Pods_MySceneKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySceneKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0D4F151F7CCCB000DA40BD /* test2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test2.jpg; sourceTree = "<group>"; };
 		4B0D4F171F7CE44300DA40BD /* test3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test3.jpg; sourceTree = "<group>"; };
 		4B311A6A1F7B676800E472A4 /* MySceneKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySceneKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +77,21 @@
 		4B311A971F7B6ECC00E472A4 /* Chapter1Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter1Controller.swift; sourceTree = "<group>"; };
 		4B311A9A1F7B747200E472A4 /* Chapter2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chapter2.storyboard; sourceTree = "<group>"; };
 		4B311A9C1F7B748100E472A4 /* Chapter2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter2Controller.swift; sourceTree = "<group>"; };
+		4BA4843F1F8A5C0400E3600B /* AiyaCameraSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AiyaCameraSDK.bundle; sourceTree = "<group>"; };
+		4BA484401F8A5C0400E3600B /* AiyaCameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AiyaCameraSDK.framework; sourceTree = "<group>"; };
+		4BA484431F8A5D6F00E3600B /* MySceneKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MySceneKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		4BA484481F8A5EEB00E3600B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4BA4844A1F8A5EF100E3600B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		4BA4844C1F8A5EF600E3600B /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		4BA4844E1F8A604A00E3600B /* panda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = panda.jpg; path = MySceneKit/assets/images/panda.jpg; sourceTree = "<group>"; };
+		4BA484541F8C5FB500E3600B /* AiyaDrawTrackPointFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AiyaDrawTrackPointFilter.m; sourceTree = "<group>"; };
+		4BA484551F8C5FB500E3600B /* AiyaDrawTrackPointFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AiyaDrawTrackPointFilter.h; sourceTree = "<group>"; };
+		4BA484561F8C5FB500E3600B /* AiyaGLDrawPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AiyaGLDrawPoint.m; sourceTree = "<group>"; };
+		4BA484571F8C5FB500E3600B /* AiyaTrackInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AiyaTrackInput.h; sourceTree = "<group>"; };
+		4BA484581F8C5FB500E3600B /* AiyaGLDrawPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AiyaGLDrawPoint.h; sourceTree = "<group>"; };
+		4BA484591F8C5FB600E3600B /* AiyaTrackInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AiyaTrackInput.m; sourceTree = "<group>"; };
+		4BA4845A1F8C5FB600E3600B /* AiyaTrackEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AiyaTrackEffect.h; sourceTree = "<group>"; };
+		4BA4845B1F8C5FB600E3600B /* AiyaTrackEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AiyaTrackEffect.m; sourceTree = "<group>"; };
 		4BA7CD621F7B9CAF002DFB8A /* test1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test1.jpg; sourceTree = "<group>"; };
 		4BA7CD651F7B9FE2002DFB8A /* Chapter3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chapter3.storyboard; sourceTree = "<group>"; };
 		4BA7CD671F7B9FF9002DFB8A /* Chapter3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter3Controller.swift; sourceTree = "<group>"; };
@@ -87,6 +114,8 @@
 		4BA7CD991F7BE8DC002DFB8A /* Chapter11Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter11Controller.swift; sourceTree = "<group>"; };
 		4BA7CD9D1F7BE8E2002DFB8A /* Chapter12.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chapter12.storyboard; sourceTree = "<group>"; };
 		4BA7CD9E1F7BE8E2002DFB8A /* Chapter12Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter12Controller.swift; sourceTree = "<group>"; };
+		80B810861020EC52C9250974 /* Pods-MySceneKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySceneKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySceneKit/Pods-MySceneKit.debug.xcconfig"; sourceTree = "<group>"; };
+		AB299583F321BEC566F448EA /* Pods-MySceneKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySceneKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySceneKit/Pods-MySceneKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +123,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA4844D1F8A5EF700E3600B /* libiconv.tbd in Frameworks */,
+				4BA4844B1F8A5EF100E3600B /* libc++.tbd in Frameworks */,
+				4BA484491F8A5EEB00E3600B /* libz.tbd in Frameworks */,
+				4BA484421F8A5C0400E3600B /* AiyaCameraSDK.framework in Frameworks */,
+				62F7B37883E7D9C40E93881F /* Pods_MySceneKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +137,11 @@
 		4B311A611F7B676800E472A4 = {
 			isa = PBXGroup;
 			children = (
+				4BA4844E1F8A604A00E3600B /* panda.jpg */,
 				4B311A6C1F7B676800E472A4 /* MySceneKit */,
 				4B311A6B1F7B676800E472A4 /* Products */,
+				4BA484471F8A5EEB00E3600B /* Frameworks */,
+				EDB55F11090C3CB87C0B241E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +156,7 @@
 		4B311A6C1F7B676800E472A4 /* MySceneKit */ = {
 			isa = PBXGroup;
 			children = (
+				4BA484431F8A5D6F00E3600B /* MySceneKit-Bridging-Header.h */,
 				4B311A801F7B68B400E472A4 /* assets */,
 				4B311A6D1F7B676800E472A4 /* AppDelegate.swift */,
 				4B311A881F7B693300E472A4 /* main */,
@@ -141,6 +179,7 @@
 		4B311A801F7B68B400E472A4 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				4BA4843E1F8A5C0400E3600B /* Aiya */,
 				4BA7CD691F7BA683002DFB8A /* models */,
 				4BA7CD611F7B93C0002DFB8A /* images */,
 				4B311A811F7B68B400E472A4 /* Assets.xcassets */,
@@ -179,6 +218,42 @@
 				4B311A9C1F7B748100E472A4 /* Chapter2Controller.swift */,
 			);
 			path = chapter2;
+			sourceTree = "<group>";
+		};
+		4BA4843E1F8A5C0400E3600B /* Aiya */ = {
+			isa = PBXGroup;
+			children = (
+				4BA4843F1F8A5C0400E3600B /* AiyaCameraSDK.bundle */,
+				4BA484401F8A5C0400E3600B /* AiyaCameraSDK.framework */,
+			);
+			name = Aiya;
+			path = libs/Aiya;
+			sourceTree = SOURCE_ROOT;
+		};
+		4BA484471F8A5EEB00E3600B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BA4844C1F8A5EF600E3600B /* libiconv.tbd */,
+				4BA4844A1F8A5EF100E3600B /* libc++.tbd */,
+				4BA484481F8A5EEB00E3600B /* libz.tbd */,
+				012F4F2CC0F11C10B24A119F /* Pods_MySceneKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BA484501F8A60ED00E3600B /* FaceDetector */ = {
+			isa = PBXGroup;
+			children = (
+				4BA484551F8C5FB500E3600B /* AiyaDrawTrackPointFilter.h */,
+				4BA484541F8C5FB500E3600B /* AiyaDrawTrackPointFilter.m */,
+				4BA484581F8C5FB500E3600B /* AiyaGLDrawPoint.h */,
+				4BA484561F8C5FB500E3600B /* AiyaGLDrawPoint.m */,
+				4BA4845A1F8C5FB600E3600B /* AiyaTrackEffect.h */,
+				4BA4845B1F8C5FB600E3600B /* AiyaTrackEffect.m */,
+				4BA484571F8C5FB500E3600B /* AiyaTrackInput.h */,
+				4BA484591F8C5FB600E3600B /* AiyaTrackInput.m */,
+			);
+			path = FaceDetector;
 			sourceTree = "<group>";
 		};
 		4BA7CD611F7B93C0002DFB8A /* images */ = {
@@ -274,6 +349,7 @@
 		4BA7CD971F7BE8DC002DFB8A /* chapter11 */ = {
 			isa = PBXGroup;
 			children = (
+				4BA484501F8A60ED00E3600B /* FaceDetector */,
 				4BA7CD981F7BE8DC002DFB8A /* Chapter11.storyboard */,
 				4BA7CD991F7BE8DC002DFB8A /* Chapter11Controller.swift */,
 			);
@@ -289,6 +365,15 @@
 			path = chapter12;
 			sourceTree = "<group>";
 		};
+		EDB55F11090C3CB87C0B241E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80B810861020EC52C9250974 /* Pods-MySceneKit.debug.xcconfig */,
+				AB299583F321BEC566F448EA /* Pods-MySceneKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -296,9 +381,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B311A7C1F7B676800E472A4 /* Build configuration list for PBXNativeTarget "MySceneKit" */;
 			buildPhases = (
+				7E6E8395C682A6DA173AC40F /* [CP] Check Pods Manifest.lock */,
 				4B311A661F7B676800E472A4 /* Sources */,
 				4B311A671F7B676800E472A4 /* Frameworks */,
 				4B311A681F7B676800E472A4 /* Resources */,
+				AA280185E8E12E9A1E865884 /* [CP] Embed Pods Frameworks */,
+				FE331F23662274667F9B460A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,6 +409,7 @@
 				TargetAttributes = {
 					4B311A691F7B676800E472A4 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -348,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA4844F1F8A604A00E3600B /* panda.jpg in Resources */,
 				4B311A851F7B68B400E472A4 /* Info.plist in Resources */,
 				4B311A781F7B676800E472A4 /* LaunchScreen.storyboard in Resources */,
 				4BA7CD861F7BE8BE002DFB8A /* Chapter7.storyboard in Resources */,
@@ -368,10 +458,74 @@
 				4BA7CD631F7B9CAF002DFB8A /* test1.jpg in Resources */,
 				4B311A9B1F7B747200E472A4 /* Chapter2.storyboard in Resources */,
 				4B0D4F181F7CE44400DA40BD /* test3.jpg in Resources */,
+				4BA484411F8A5C0400E3600B /* AiyaCameraSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E6E8395C682A6DA173AC40F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MySceneKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA280185E8E12E9A1E865884 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MySceneKit/Pods-MySceneKit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySceneKit/Pods-MySceneKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE331F23662274667F9B460A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MySceneKit/Pods-MySceneKit-resources.sh",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySceneKit/Pods-MySceneKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4B311A661F7B676800E472A4 /* Sources */ = {
@@ -392,10 +546,14 @@
 				4B311A901F7B6AD400E472A4 /* MainExtension.swift in Sources */,
 				4B311A8C1F7B695100E472A4 /* MainController.swift in Sources */,
 				4B311A941F7B6DCE00E472A4 /* ChapterInfo.swift in Sources */,
+				4BA4845F1F8C5FB600E3600B /* AiyaTrackEffect.m in Sources */,
 				4BA7CD7D1F7BE8AE002DFB8A /* Chapter5Controller.swift in Sources */,
 				4B311A6E1F7B676800E472A4 /* AppDelegate.swift in Sources */,
+				4BA4845E1F8C5FB600E3600B /* AiyaTrackInput.m in Sources */,
 				4B311A8E1F7B6A0200E472A4 /* MainCell.swift in Sources */,
 				4BA7CD681F7B9FF9002DFB8A /* Chapter3Controller.swift in Sources */,
+				4BA4845C1F8C5FB600E3600B /* AiyaDrawTrackPointFilter.m in Sources */,
+				4BA4845D1F8C5FB600E3600B /* AiyaGLDrawPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +619,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -512,7 +670,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -522,14 +680,23 @@
 		};
 		4B311A7D1F7B676800E472A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80B810861020EC52C9250974 /* Pods-MySceneKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2RW8Q6Y7W7;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs/Aiya",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/MySceneKit/assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.kaka.MySceneKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MySceneKit/MySceneKit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -537,14 +704,22 @@
 		};
 		4B311A7E1F7B676800E472A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB299583F321BEC566F448EA /* Pods-MySceneKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2RW8Q6Y7W7;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs/Aiya",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/MySceneKit/assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.kaka.MySceneKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MySceneKit/MySceneKit-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

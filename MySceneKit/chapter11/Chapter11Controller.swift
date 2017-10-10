@@ -8,39 +8,89 @@
 
 import UIKit
 import SceneKit
+import GPUImage
+import UIKit
+import SceneKit
 
 class Chapter11Controller: UIViewController {
+    var camera: GPUImageVideoCamera!
+    var preview : GPUImageView!
 
+    var ciImage: CIImage?
+    lazy var trackHandler = AiyaTrackHandler()
+    lazy var trackEffect = AiyaTrackEffect()
+    var trackInput: AiyaTrackInput!
+    
+    let scnNode = SCNNode()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        setupCamera()
         setupSCNView()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        camera.startCapture()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        camera.stopCapture()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }
 
 extension Chapter11Controller {
+    fileprivate func setupCamera() {
+        trackInput = AiyaTrackInput(aiyaTrackEffect: trackEffect)
+        
+        camera = GPUImageVideoCamera(sessionPreset: AVCaptureSession.Preset.hd1280x720.rawValue, cameraPosition: .front)
+        camera.outputImageOrientation = .portrait
+        camera.horizontallyMirrorFrontFacingCamera = true
+        camera.delegate = self
+        
+        preview = GPUImageView(frame: view.bounds)
+        preview.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
+        view.addSubview(preview)
+        
+        camera.addTarget(trackInput)
+        camera.addTarget(preview)
+    }
+    
     fileprivate func setupSCNView() {
-        let scnView = SCNView(frame: view.frame)
-        scnView.backgroundColor = UIColor.black
-        scnView.allowsCameraControl = true
+        let scnView = SCNView()
+        scnView.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        scnView.scene = SCNScene()
+        scnView.backgroundColor = UIColor.clear
         view.addSubview(scnView)
         
-        let scnScene = SCNScene()
-        scnView.scene = scnScene
+        let scnPlane = SCNPlane(width: 20, height: 20)
+        scnPlane.firstMaterial?.diffuse.contents = "panda.jpg"
+        scnNode.geometry = scnPlane
         
-        // plane
-        let plane = SCNPlane(width: 1, height: 1)
-        plane.firstMaterial?.diffuse.contents = UIImage(named: "test3.jpg")
-        let planeNode = SCNNode(geometry: plane)
-        planeNode.position = SCNVector3Make(0, 0, 0)
-        scnScene.rootNode.addChildNode(planeNode)
+        scnView.scene?.rootNode.addChildNode(scnNode)
+        scnView.allowsCameraControl = true
+    }
+}
+
+extension Chapter11Controller: GPUImageVideoCameraDelegate {
+    func willOutputSampleBuffer(_ sampleBuffer: CMSampleBuffer!) {
+        let faceData = trackEffect.getFaceData()
         
-//        // custom.
-//        let path = UIBezierPath(arcCenter: <#T##CGPoint#>, radius: <#T##CGFloat#>, startAngle: <#T##CGFloat#>, endAngle: <#T##CGFloat#>, clockwise: <#T##Bool#>)
-//        let shape = SCNShape(path: <#T##UIBezierPath?#>, extrusionDepth: 3)
+        let rotateX = CGFloat(faceData.faceRotation.0)
+        let rotateY = CGFloat(faceData.faceRotation.1)
+        let rotateZ = CGFloat(faceData.faceRotation.2)
+        
+        let translateX = CGFloat(faceData.faceTranslation.0)
+        let translateY = CGFloat(faceData.faceTranslation.1)
+        let translateZ = CGFloat(faceData.faceTranslation.2)
+        
+        let rotation = SCNAction.rotateTo(x: rotateX, y: -rotateY, z: rotateZ, duration: 0)
+        scnNode.runAction(rotation, forKey: "rot")
     }
 }

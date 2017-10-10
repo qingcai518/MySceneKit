@@ -8,6 +8,7 @@
 
 import UIKit
 import SceneKit
+import SpriteKit
 import GPUImage
 
 let screenWidth = UIScreen.main.bounds.width
@@ -26,13 +27,27 @@ class Chapter11Controller: UIViewController {
     lazy var scnNode = SCNNode()
     
     var stickerOriginalSize: CGSize?
+    var frames = [UIImage]()
+    var animationTime : Float = 0
+//    var frames = [
+//        UIImage(named: "bear.jpg"),
+//        UIImage(named: "dahuxu.png"),
+//        UIImage(named: "dog.jpg"),
+//        UIImage(named: "huxu.png"),
+//        UIImage(named: "maohuzi.png"),
+//        UIImage(named: "mini.png"),
+//        UIImage(named: "panda.jpg"),
+//        UIImage(named: "test.png")
+//    ]
+//    var animationTime : Float = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupCamera()
-        setupSCNView()
         setupStickerSize()
+        loadGif()
+        setupSCNView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,10 +90,23 @@ extension Chapter11Controller {
         view.addSubview(scnView)
         
         let scnPlane = SCNPlane(width: scnView.frame.width, height: scnView.frame.height)
-        scnPlane.firstMaterial?.diffuse.contents = "panda.jpg"
+        scnPlane.firstMaterial?.diffuse.contents = frames[4]
         scnNode.geometry = scnPlane
         scnNode.position = SCNVector3Make(0, 0, 0)
         scnView.scene?.rootNode.addChildNode(scnNode)
+        
+        var count = 0
+        let animationAction = SCNAction.customAction(duration: TimeInterval(animationTime)) { [weak self] (node, elapsedTime) in
+            guard let `self` = self else {return}
+            self.scnNode.geometry?.firstMaterial?.diffuse.contents = self.frames[count]
+            if count < self.frames.count - 1 {
+                count += 1
+            } else {
+                count = 0
+            }
+        }
+        let repeateGif = SCNAction.repeatForever(animationAction)
+        scnNode.runAction(repeateGif)
         
         scnView.allowsCameraControl = true
     }
@@ -94,6 +122,33 @@ extension Chapter11Controller {
     
     fileprivate func toScreenY(_ detectY: Float) -> CGFloat {
         return screenHeight * CGFloat(1 - detectY)
+    }
+    
+    fileprivate func loadGif() {
+        guard let filePath = Bundle.main.path(forResource: "panda", ofType: "jpg") else {return}
+        let fileUrl = URL(fileURLWithPath: filePath)
+        do {
+            let data = try Data(contentsOf: fileUrl)
+            guard let src = CGImageSourceCreateWithData(data as CFData, nil) else {return}
+            let imageCount = CGImageSourceGetCount(src)
+            
+            for i in 0..<imageCount {
+                guard let cgImage = CGImageSourceCreateImageAtIndex(src, i, nil) else {continue}
+                guard let properties = CGImageSourceCopyPropertiesAtIndex(src, i, nil) as? [String: Any] else {continue}
+                
+                guard let frameProperties = properties[kCGImagePropertyGIFDictionary as String] as? [String: Any] else {continue}
+                guard let delayTime = frameProperties[kCGImagePropertyGIFUnclampedDelayTime as String] as? Float else {continue}
+                animationTime += delayTime
+                
+                let image = UIImage(cgImage: cgImage)
+                frames.append(image)
+            }
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        print("animation time = \(animationTime)")
+        print("count = \(frames.count)")
     }
 }
 

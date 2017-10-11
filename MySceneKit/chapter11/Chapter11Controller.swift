@@ -15,6 +15,8 @@ let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
 class Chapter11Controller: UIViewController {
+    @IBOutlet weak var cameraBtn: UIButton!
+    
     var camera: GPUImageVideoCamera!
     var preview : GPUImageView!
 
@@ -22,7 +24,7 @@ class Chapter11Controller: UIViewController {
     lazy var trackHandler = AiyaTrackHandler()
     lazy var trackEffect = AiyaTrackEffect()
     var trackInput: AiyaTrackInput!
-    
+
     lazy var headView = SCNView()
     lazy var headNode = SCNNode()
     
@@ -42,6 +44,7 @@ class Chapter11Controller: UIViewController {
         loadGif()
         setupHeaderView()
         setupBeardView()
+        view.bringSubview(toFront: cameraBtn)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,7 +84,8 @@ extension Chapter11Controller {
         headView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         headView.scene = SCNScene()
         headView.backgroundColor = UIColor.clear
-        view.addSubview(headView)
+//        view.addSubview(headView)
+        preview.addSubview(headView)
         
         let scnPlane = SCNPlane(width: headView.frame.width, height: headView.frame.height)
         scnPlane.firstMaterial?.diffuse.contents = frames[0]
@@ -111,7 +115,8 @@ extension Chapter11Controller {
         beardView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         beardView.scene = SCNScene()
         beardView.backgroundColor = UIColor.clear
-        view.addSubview(beardView)
+//        view.addSubview(beardView)
+        preview.addSubview(beardView)
         
         let beardImage = UIImage(named: "huxu.png")
         beardSize = beardImage?.size
@@ -164,6 +169,10 @@ extension Chapter11Controller {
 
 extension Chapter11Controller: GPUImageVideoCameraDelegate {
     func willOutputSampleBuffer(_ sampleBuffer: CMSampleBuffer!) {
+        if let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
+            ciImage = CIImage(cvImageBuffer: pixelBuffer)
+        }
+
         if !trackEffect.trackSuccess() {
             DispatchQueue.main.async {
                 self.headView.isHidden = true
@@ -211,5 +220,28 @@ extension Chapter11Controller: GPUImageVideoCameraDelegate {
         let rotation = SCNAction.rotateTo(x: rotateX, y: -rotateY, z: rotateZ, duration: 0)
         headNode.runAction(rotation)
         beardNode.runAction(rotation)
+    }
+}
+
+extension Chapter11Controller {
+    @IBAction func doCamera() {
+        guard let ciImage = ciImage else {return}
+        let image0 = UIImage(ciImage: ciImage, scale: UIScreen.main.scale, orientation: UIImageOrientation.leftMirrored)
+        let image1 = headView.snapshot()
+        let image2 = beardView.snapshot()
+        
+        let size = CGSize(width: screenWidth, height: screenHeight)
+        UIGraphicsBeginImageContext(size)
+        
+        image0.draw(in: view.frame)
+        image1.draw(in: headView.frame, blendMode: CGBlendMode.normal, alpha: 1)
+        image2.draw(in: beardView.frame, blendMode: CGBlendMode.normal, alpha: 1)
+        
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        guard let next = UIStoryboard(name: "PictureConfirm", bundle: nil).instantiateInitialViewController() as? PictureConfirmController else {return}
+        next.image = newImage
+        navigationController?.pushViewController(next, animated: true)
     }
 }

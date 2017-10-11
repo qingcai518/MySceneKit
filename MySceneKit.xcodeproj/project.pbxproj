@@ -38,6 +38,8 @@
 		4BA4846F1F8D15F900E3600B /* bear.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BA484671F8D15F800E3600B /* bear.jpg */; };
 		4BA484701F8D15F900E3600B /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA484681F8D15F900E3600B /* test.png */; };
 		4BA484721F8D15F900E3600B /* panda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BA4846A1F8D15F900E3600B /* panda.jpg */; };
+		4BA484751F8DF21100E3600B /* PictureConfirm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA484741F8DF21100E3600B /* PictureConfirm.storyboard */; };
+		4BA484771F8DF22200E3600B /* PictureConfirmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA484761F8DF22200E3600B /* PictureConfirmController.swift */; };
 		4BA7CD631F7B9CAF002DFB8A /* test1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7CD621F7B9CAF002DFB8A /* test1.jpg */; };
 		4BA7CD661F7B9FE2002DFB8A /* Chapter3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7CD651F7B9FE2002DFB8A /* Chapter3.storyboard */; };
 		4BA7CD681F7B9FF9002DFB8A /* Chapter3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7CD671F7B9FF9002DFB8A /* Chapter3Controller.swift */; };
@@ -102,6 +104,8 @@
 		4BA484671F8D15F800E3600B /* bear.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bear.jpg; sourceTree = "<group>"; };
 		4BA484681F8D15F900E3600B /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		4BA4846A1F8D15F900E3600B /* panda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = panda.jpg; sourceTree = "<group>"; };
+		4BA484741F8DF21100E3600B /* PictureConfirm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PictureConfirm.storyboard; sourceTree = "<group>"; };
+		4BA484761F8DF22200E3600B /* PictureConfirmController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureConfirmController.swift; sourceTree = "<group>"; };
 		4BA7CD621F7B9CAF002DFB8A /* test1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test1.jpg; sourceTree = "<group>"; };
 		4BA7CD651F7B9FE2002DFB8A /* Chapter3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chapter3.storyboard; sourceTree = "<group>"; };
 		4BA7CD671F7B9FF9002DFB8A /* Chapter3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter3Controller.swift; sourceTree = "<group>"; };
@@ -367,6 +371,8 @@
 				4BA484501F8A60ED00E3600B /* FaceDetector */,
 				4BA7CD981F7BE8DC002DFB8A /* Chapter11.storyboard */,
 				4BA7CD991F7BE8DC002DFB8A /* Chapter11Controller.swift */,
+				4BA484741F8DF21100E3600B /* PictureConfirm.storyboard */,
+				4BA484761F8DF22200E3600B /* PictureConfirmController.swift */,
 			);
 			path = chapter11;
 			sourceTree = "<group>";
@@ -478,6 +484,7 @@
 				4BA7CD631F7B9CAF002DFB8A /* test1.jpg in Resources */,
 				4B311A9B1F7B747200E472A4 /* Chapter2.storyboard in Resources */,
 				4B0D4F181F7CE44400DA40BD /* test3.jpg in Resources */,
+				4BA484751F8DF21100E3600B /* PictureConfirm.storyboard in Resources */,
 				4BA484411F8A5C0400E3600B /* AiyaCameraSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,6 +564,7 @@
 				4BA7CD781F7BE892002DFB8A /* Chapter4Controller.swift in Sources */,
 				4BA7CD871F7BE8BE002DFB8A /* Chapter7Controller.swift in Sources */,
 				4BA7CDA01F7BE8E2002DFB8A /* Chapter12Controller.swift in Sources */,
+				4BA484771F8DF22200E3600B /* PictureConfirmController.swift in Sources */,
 				4BA7CD8C1F7BE8C5002DFB8A /* Chapter8Controller.swift in Sources */,
 				4BA7CD911F7BE8CE002DFB8A /* Chapter9Controller.swift in Sources */,
 				4B311A9D1F7B748100E472A4 /* Chapter2Controller.swift in Sources */,

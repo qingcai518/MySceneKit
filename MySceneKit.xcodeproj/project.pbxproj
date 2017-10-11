@@ -37,9 +37,7 @@
 		4BA4846E1F8D15F900E3600B /* mini.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA484661F8D15F800E3600B /* mini.png */; };
 		4BA4846F1F8D15F900E3600B /* bear.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BA484671F8D15F800E3600B /* bear.jpg */; };
 		4BA484701F8D15F900E3600B /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA484681F8D15F900E3600B /* test.png */; };
-		4BA484711F8D15F900E3600B /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BA484691F8D15F900E3600B /* dog.jpg */; };
 		4BA484721F8D15F900E3600B /* panda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BA4846A1F8D15F900E3600B /* panda.jpg */; };
-		4BA484731F8D15F900E3600B /* dahuxu.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BA4846B1F8D15F900E3600B /* dahuxu.png */; };
 		4BA7CD631F7B9CAF002DFB8A /* test1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7CD621F7B9CAF002DFB8A /* test1.jpg */; };
 		4BA7CD661F7B9FE2002DFB8A /* Chapter3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7CD651F7B9FE2002DFB8A /* Chapter3.storyboard */; };
 		4BA7CD681F7B9FF9002DFB8A /* Chapter3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7CD671F7B9FF9002DFB8A /* Chapter3Controller.swift */; };
@@ -103,9 +101,7 @@
 		4BA484661F8D15F800E3600B /* mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mini.png; sourceTree = "<group>"; };
 		4BA484671F8D15F800E3600B /* bear.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bear.jpg; sourceTree = "<group>"; };
 		4BA484681F8D15F900E3600B /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
-		4BA484691F8D15F900E3600B /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
 		4BA4846A1F8D15F900E3600B /* panda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = panda.jpg; sourceTree = "<group>"; };
-		4BA4846B1F8D15F900E3600B /* dahuxu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dahuxu.png; sourceTree = "<group>"; };
 		4BA7CD621F7B9CAF002DFB8A /* test1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test1.jpg; sourceTree = "<group>"; };
 		4BA7CD651F7B9FE2002DFB8A /* Chapter3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chapter3.storyboard; sourceTree = "<group>"; };
 		4BA7CD671F7B9FF9002DFB8A /* Chapter3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter3Controller.swift; sourceTree = "<group>"; };
@@ -273,8 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				4BA484671F8D15F800E3600B /* bear.jpg */,
-				4BA4846B1F8D15F900E3600B /* dahuxu.png */,
-				4BA484691F8D15F900E3600B /* dog.jpg */,
 				4BA484641F8D15F800E3600B /* huxu.png */,
 				4BA484651F8D15F800E3600B /* maohuzi.png */,
 				4BA484661F8D15F800E3600B /* mini.png */,
@@ -480,11 +474,9 @@
 				4BA7CD811F7BE8B7002DFB8A /* Chapter6.storyboard in Resources */,
 				4BA7CD901F7BE8CE002DFB8A /* Chapter9.storyboard in Resources */,
 				4BA7CD661F7B9FE2002DFB8A /* Chapter3.storyboard in Resources */,
-				4BA484731F8D15F900E3600B /* dahuxu.png in Resources */,
 				4B311A961F7B6EB900E472A4 /* Chapter1.storyboard in Resources */,
 				4BA7CD631F7B9CAF002DFB8A /* test1.jpg in Resources */,
 				4B311A9B1F7B747200E472A4 /* Chapter2.storyboard in Resources */,
-				4BA484711F8D15F900E3600B /* dog.jpg in Resources */,
 				4B0D4F181F7CE44400DA40BD /* test3.jpg in Resources */,
 				4BA484411F8A5C0400E3600B /* AiyaCameraSDK.bundle in Resources */,
 			);

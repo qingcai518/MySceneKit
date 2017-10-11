@@ -31,8 +31,12 @@ class Chapter11Controller: UIViewController {
     lazy var beardView = SCNView()
     lazy var beardNode = SCNNode()
     
+    lazy var glassView = SCNView()
+    lazy var glassNode = SCNNode()
+    
     var headSize: CGSize?
     var beardSize: CGSize?
+    var glassSize: CGSize?
     
     var frames = [UIImage]()
     var animationTime : Float = 0
@@ -44,6 +48,7 @@ class Chapter11Controller: UIViewController {
         loadGif()
         setupHeaderView()
         setupBeardView()
+        setupGlassView()
         view.bringSubview(toFront: cameraBtn)
     }
     
@@ -84,7 +89,6 @@ extension Chapter11Controller {
         headView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         headView.scene = SCNScene()
         headView.backgroundColor = UIColor.clear
-//        view.addSubview(headView)
         preview.addSubview(headView)
         
         let scnPlane = SCNPlane(width: headView.frame.width, height: headView.frame.height)
@@ -115,7 +119,6 @@ extension Chapter11Controller {
         beardView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         beardView.scene = SCNScene()
         beardView.backgroundColor = UIColor.clear
-//        view.addSubview(beardView)
         preview.addSubview(beardView)
         
         let beardImage = UIImage(named: "huxu.png")
@@ -126,6 +129,23 @@ extension Chapter11Controller {
         beardNode.geometry = scnPlane
         beardNode.position = SCNVector3Make(0, 0, 0)
         beardView.scene?.rootNode.addChildNode(beardNode)
+    }
+    
+    fileprivate func setupGlassView() {
+        glassView.isHidden = true
+        glassView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        glassView.scene = SCNScene()
+        glassView.backgroundColor = UIColor.clear
+        preview.addSubview(glassView)
+        
+        let glassImage = UIImage(named: "glass.png")
+        glassSize = glassImage?.size
+        
+        let scnPlane = SCNPlane(width: glassView.frame.width, height: glassView.frame.height)
+        scnPlane.firstMaterial?.diffuse.contents = glassImage
+        glassNode.geometry = scnPlane
+        glassNode.position = SCNVector3Make(0, 0, 0)
+        glassView.scene?.rootNode.addChildNode(glassNode)
     }
     
     fileprivate func toScreenX(_ detectX: Float) -> CGFloat {
@@ -204,7 +224,16 @@ extension Chapter11Controller: GPUImageVideoCameraDelegate {
         if let beardSize = beardSize {
             beardHeight = beardWidth * beardSize.height / beardSize.width
         }
-
+        
+        // glass.
+        let glassCenterX = toScreenX(faceData.featurePoints2D.27.0)
+        let glassCenterY = toScreenY(faceData.featurePoints2D.27.1)
+        let glassWidth = toScreenX(faceData.featurePoints2D.16.0 - faceData.featurePoints2D.0.0)
+        var glassHeight = glassWidth
+        if let glassSize = glassSize {
+            glassHeight = glassWidth * glassSize.height / glassSize.width
+        }
+        
         DispatchQueue.main.async {
             // head
             self.headView.frame = CGRect(x: 0, y: 0, width: headWidth, height: headHeight)
@@ -215,6 +244,11 @@ extension Chapter11Controller: GPUImageVideoCameraDelegate {
             self.beardView.frame = CGRect(x: 0, y: 0, width: beardWidth, height: beardHeight)
             self.beardView.center = CGPoint(x: beardCenterX, y: beardCenterY)
             self.beardView.isHidden = false
+            
+            // glass.
+            self.glassView.frame = CGRect(x: 0, y: 0, width: glassWidth, height: glassHeight)
+            self.glassView.center = CGPoint(x: glassCenterX, y: glassCenterY)
+            self.glassView.isHidden = false
         }
 
         let rotation = SCNAction.rotateTo(x: rotateX, y: -rotateY, z: rotateZ, duration: 0)
@@ -229,6 +263,7 @@ extension Chapter11Controller {
         let image0 = UIImage(ciImage: ciImage, scale: UIScreen.main.scale, orientation: UIImageOrientation.leftMirrored)
         let image1 = headView.snapshot()
         let image2 = beardView.snapshot()
+        let image3 = glassView.snapshot()
         
         let size = CGSize(width: screenWidth, height: screenHeight)
         UIGraphicsBeginImageContext(size)
@@ -236,6 +271,7 @@ extension Chapter11Controller {
         image0.draw(in: view.frame)
         image1.draw(in: headView.frame, blendMode: CGBlendMode.normal, alpha: 1)
         image2.draw(in: beardView.frame, blendMode: CGBlendMode.normal, alpha: 1)
+        image3.draw(in: glassView.frame, blendMode: CGBlendMode.normal, alpha: 1)
         
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()

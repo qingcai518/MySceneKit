@@ -27,6 +27,8 @@
                                 <state key="normal" image="camera"/>
                                 <connections>
                                     <action selector="doCamera" destination="kWz-eP-jRe" eventType="touchUpInside" id="BEH-Hu-Rhm"/>
+                                    <action selector="endRecord" destination="kWz-eP-jRe" eventType="touchUpInside" id="d2N-2a-V15"/>
+                                    <action selector="startRecord" destination="kWz-eP-jRe" eventType="touchDown" id="96w-eJ-mVi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -47,6 +49,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera" width="25" height="25"/>
+        <image name="camera" width="50" height="50"/>
     </resources>
 </document>

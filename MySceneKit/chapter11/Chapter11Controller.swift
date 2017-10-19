@@ -10,6 +10,8 @@ import UIKit
 import SceneKit
 import SpriteKit
 import GPUImage
+import Photos
+import ReplayKit
 
 let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
@@ -40,6 +42,9 @@ class Chapter11Controller: UIViewController {
     
     var frames = [UIImage]()
     var animationTime : Float = 0
+    
+    // temp.
+    let path = NSTemporaryDirectory() + "/tmp.mp4"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -185,6 +190,21 @@ extension Chapter11Controller {
         print("animation time = \(animationTime)")
         print("count = \(frames.count)")
     }
+    
+    fileprivate func saveFileToCameraRoll() {
+        DispatchQueue.global(qos: .utility).async {
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: self.path))
+            }) { (done, err) in
+                if err != nil {
+                    print("Error creating video file in library")
+                    print(err.debugDescription)
+                } else {
+                    print("Done writing asset to the user's photo library")
+                }
+            }
+        }
+    }
 }
 
 extension Chapter11Controller: GPUImageVideoCameraDelegate {
@@ -197,6 +217,7 @@ extension Chapter11Controller: GPUImageVideoCameraDelegate {
             DispatchQueue.main.async {
                 self.headView.isHidden = true
                 self.beardView.isHidden = true
+                self.glassView.isHidden = true
             }
             return
         }
@@ -226,9 +247,9 @@ extension Chapter11Controller: GPUImageVideoCameraDelegate {
         }
         
         // glass.
-        let glassCenterX = toScreenX(faceData.featurePoints2D.27.0)
-        let glassCenterY = toScreenY(faceData.featurePoints2D.27.1)
-        let glassWidth = toScreenX(faceData.featurePoints2D.16.0 - faceData.featurePoints2D.0.0)
+        let glassCenterX = toScreenX(faceData.featurePoints2D.28.0)
+        let glassCenterY = toScreenY(faceData.featurePoints2D.28.1)
+        let glassWidth = toScreenX(faceData.featurePoints2D.16.0 - faceData.featurePoints2D.0.0 + 0.2)
         var glassHeight = glassWidth
         if let glassSize = glassSize {
             glassHeight = glassWidth * glassSize.height / glassSize.width
@@ -254,10 +275,19 @@ extension Chapter11Controller: GPUImageVideoCameraDelegate {
         let rotation = SCNAction.rotateTo(x: rotateX, y: -rotateY, z: rotateZ, duration: 0)
         headNode.runAction(rotation)
         beardNode.runAction(rotation)
+        glassNode.runAction(rotation)
     }
 }
 
 extension Chapter11Controller {
+    @IBAction func startRecord() {
+        print("111")
+    }
+    
+    @IBAction func endRecord() {
+        print("222")
+    }
+    
     @IBAction func doCamera() {
         guard let ciImage = ciImage else {return}
         let image0 = UIImage(ciImage: ciImage, scale: UIScreen.main.scale, orientation: UIImageOrientation.leftMirrored)

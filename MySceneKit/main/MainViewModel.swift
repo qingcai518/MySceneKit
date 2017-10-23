@@ -21,6 +21,7 @@ class MainViewModel {
         chapters.append(ChapterInfo(id: "Chapter9", name: "Chapter9.  camera"))
         chapters.append(ChapterInfo(id: "Chapter10", name: "Chapter10.  action"))
         chapters.append(ChapterInfo(id: "Chapter11", name: "Chapter11.  geometry"))
-        chapters.append(ChapterInfo(id: "Chapter12", name: "Chapter12."))
+        chapters.append(ChapterInfo(id: "Chapter12", name: "Chapter12.  movie"))
+        chapters.append(ChapterInfo(id: "Chapter13", name: "Chapter13.  Vision"))
     }
 }

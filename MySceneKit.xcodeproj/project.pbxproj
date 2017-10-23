@@ -63,6 +63,8 @@
 		4BA7CD9B1F7BE8DC002DFB8A /* Chapter11Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7CD991F7BE8DC002DFB8A /* Chapter11Controller.swift */; };
 		4BA7CD9F1F7BE8E2002DFB8A /* Chapter12.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7CD9D1F7BE8E2002DFB8A /* Chapter12.storyboard */; };
 		4BA7CDA01F7BE8E2002DFB8A /* Chapter12Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7CD9E1F7BE8E2002DFB8A /* Chapter12Controller.swift */; };
+		4BD916ED1F988CEC008ACBE5 /* Chapter13.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD916EC1F988CEC008ACBE5 /* Chapter13.storyboard */; };
+		4BD916EF1F988CFB008ACBE5 /* Chapter13Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD916EE1F988CFB008ACBE5 /* Chapter13Controller.swift */; };
 		62F7B37883E7D9C40E93881F /* Pods_MySceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012F4F2CC0F11C10B24A119F /* Pods_MySceneKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,8 @@
 		4BA7CD991F7BE8DC002DFB8A /* Chapter11Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter11Controller.swift; sourceTree = "<group>"; };
 		4BA7CD9D1F7BE8E2002DFB8A /* Chapter12.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chapter12.storyboard; sourceTree = "<group>"; };
 		4BA7CD9E1F7BE8E2002DFB8A /* Chapter12Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter12Controller.swift; sourceTree = "<group>"; };
+		4BD916EC1F988CEC008ACBE5 /* Chapter13.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chapter13.storyboard; sourceTree = "<group>"; };
+		4BD916EE1F988CFB008ACBE5 /* Chapter13Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter13Controller.swift; sourceTree = "<group>"; };
 		80B810861020EC52C9250974 /* Pods-MySceneKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySceneKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySceneKit/Pods-MySceneKit.debug.xcconfig"; sourceTree = "<group>"; };
 		AB299583F321BEC566F448EA /* Pods-MySceneKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySceneKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySceneKit/Pods-MySceneKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +191,7 @@
 				4BA7CD921F7BE8D5002DFB8A /* chapter10 */,
 				4BA7CD971F7BE8DC002DFB8A /* chapter11 */,
 				4BA7CD9C1F7BE8E2002DFB8A /* chapter12 */,
+				4BD916EB1F988CD8008ACBE5 /* chapter13 */,
 			);
 			path = MySceneKit;
 			sourceTree = "<group>";
@@ -389,6 +394,15 @@
 			path = chapter12;
 			sourceTree = "<group>";
 		};
+		4BD916EB1F988CD8008ACBE5 /* chapter13 */ = {
+			isa = PBXGroup;
+			children = (
+				4BD916EC1F988CEC008ACBE5 /* Chapter13.storyboard */,
+				4BD916EE1F988CFB008ACBE5 /* Chapter13Controller.swift */,
+			);
+			path = chapter13;
+			sourceTree = "<group>";
+		};
 		EDB55F11090C3CB87C0B241E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +479,7 @@
 				4B311A851F7B68B400E472A4 /* Info.plist in Resources */,
 				4B311A781F7B676800E472A4 /* LaunchScreen.storyboard in Resources */,
 				4BA7CD861F7BE8BE002DFB8A /* Chapter7.storyboard in Resources */,
+				4BD916ED1F988CEC008ACBE5 /* Chapter13.storyboard in Resources */,
 				4BA4846D1F8D15F900E3600B /* maohuzi.png in Resources */,
 				4B0D4F161F7CCCB000DA40BD /* test2.jpg in Resources */,
 				4BA484701F8D15F900E3600B /* test.png in Resources */,
@@ -522,11 +537,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MySceneKit/Pods-MySceneKit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
+				"${BUILT_PRODUCTS_DIR}/HDAugmentedReality/HDAugmentedReality.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HDAugmentedReality.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +599,7 @@
 				4BA7CD7D1F7BE8AE002DFB8A /* Chapter5Controller.swift in Sources */,
 				4B311A6E1F7B676800E472A4 /* AppDelegate.swift in Sources */,
 				4BA4845E1F8C5FB600E3600B /* AiyaTrackInput.m in Sources */,
+				4BD916EF1F988CFB008ACBE5 /* Chapter13Controller.swift in Sources */,
 				4B311A8E1F7B6A0200E472A4 /* MainCell.swift in Sources */,
 				4BA7CD681F7B9FF9002DFB8A /* Chapter3Controller.swift in Sources */,
 				4BA4845C1F8C5FB600E3600B /* AiyaDrawTrackPointFilter.m in Sources */,
@@ -651,7 +669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -702,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
